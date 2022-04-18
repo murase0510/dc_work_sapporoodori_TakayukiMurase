@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Work07</title>
+</head>
+<body>
+    <script> 
+        // 0～100までのランダムな数値を取得
+        const rand = Math.floor(Math.random() * 101);
+        document.write(`<p>Random: ${rand}</p>`); 
+
+        if (rand % 3 == 0 && rand % 6  == 0) {
+            document.write(`<p>3と6の倍数です</p>`);
+        } else if(rand % 3 == 0 && rand % 6 != 0){
+            document.write(`3の倍数で、6の倍数ではありません`);  
+        } else if(rand % 3 != 0 && rand % 6 != 0){
+            document.write(`倍数ではありません`);  
+        }
+    </script> 
+</body>
+</html>
