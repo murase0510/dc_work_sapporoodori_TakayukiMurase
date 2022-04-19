@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Work8-1</title>
+</head>
+<body>
+    <script> 
+        for(let i = 1;i < 101;i++){
+            if(i % 3 == 0 && i % 4 == 0 ){
+                document.write(`<p>Fizz Buzz</p>`); 
+            }else if(i % 3 == 0 && i % 4 != 0){
+                document.write(`<p>Fizz</p>`); 
+            }else if(i % 3 != 0 && i % 4 == 0){
+                document.write(`<p>Buzz</p>`); 
+            }else{
+                document.write(`<p>${i}</p>`); 
+            }
+        }
+
+    </script> 
+</body>
+</html>

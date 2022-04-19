@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Work07-2Switch</title>
+</head>
+<body>
+    <script> 
+        // 0～100までのランダムな数値を取得
+        const random1 = Math.floor(Math.random() * 101);
+        const random2 = Math.floor(Math.random() * 101);
+        let count = 0;
+        let printStr;
+        document.write(`<p>random01 = ${random1}, random02 = ${random2}です</p>`); 
+        is3Divisible(random1); 
+        is3Divisible(random2); 
+        
+
+        switch(count){
+            case 0:
+                printStr = '2つの数字の中に3の倍数が含まれていません';
+                break;
+            default:
+                printStr = '2つの数字の中には3の倍数が'+ count + 'つ含まれています。';
+        }
+
+        switch(random1 != random2){
+            case true:
+                document.write(`<p>random0${hikaku(random1,random2)}の方が大きいです。${printStr}</p>`); 
+                break;
+            case false:
+                document.write(`<p>2つは同じ数です。${printStr}</p>`)
+                break;
+        }
+
+        function hikaku (random1,random2){
+            switch(random1 > random2) {
+                case true:
+                    return 1;
+                case false:
+                    switch(random1 < random2) {
+                        case true:
+                            return 2;
+                        case false:
+                            return 0; 
+                    }
+            }
+        }
+
+        function is3Divisible(any_random){
+            switch(any_random % 3 == 0){
+                case true:
+                    count++;
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script> 
+</body>
+</html>
