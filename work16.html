@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>work16</title>
+</head>
+<body>
+    <script>
+
+        let taro = new Object();　
+        taro.name = 'taro';
+        taro.age = 28;
+        taro.calc_age = function(){
+            return 28 - 20;
+        }
+        document.write(taro.name);
+        document.write(taro.age);
+        //taro.calc_age();
+        document.write(`<p>${taro.name}さんは成人してから${taro.calc_age()}年経っています</p>`);
+        
+    </script> 
+</body>
+</html>

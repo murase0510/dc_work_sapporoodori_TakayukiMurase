@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>オブジェクトの作成</title>
+</head>
+<body>
+    <script>
+        // 連想配列オブジェクト作成
+        let product = new Object();
+        product.name = 'マスク';
+        product.stock = 30;
+        product.stock_conf = function(){
+        document.write(`<p>${product.name}の在庫は${ product.stock}箱あります</p>`);
+        }
+
+        // nameプロパティ
+        document.write(product.name);	// マスク
+        // stock_confメソッド
+        product.stock_conf();		// 商品在庫数の確認メッセージの表示
+    </script> 
+</body>
+</html>

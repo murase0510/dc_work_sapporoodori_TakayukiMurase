@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Work12</title>
+</head>
+<body>
+    <script> 
+        let class1 = {
+            "tokugawa":1,
+            "oda":1,
+            "toyotomi":1,
+            "takeda":1
+        };
+        let class2 = {
+            "miyamoto":1,
+            "taira":1,
+            "fujiwara":1,
+            "sugawara":1
+        };
+
+        updatePoint(class1);
+        updatePoint(class2);
+        //pointHikaku(class1,class2);
+        document.write(`<p>class1の平均点は${getAverage(class1)}です</p>`); 
+        document.write(`<p>class2の平均点は${getAverage(class2)}です</p>`); 
+
+        function updatePoint(anyClass){
+            for (var k in anyClass) {
+                anyClass[k] = Math.floor(Math.random() * 101);
+            }
+        }
+
+        function pointHikaku(class1,class2){
+            document.write(`<p>oda:${class1.oda}sugawara${class2.sugawara}</p>`); 
+            if(class1.oda > class2.sugawara){
+                document.write(`<p>odaの方が大きいです</p>`); 
+            }else if(class1.oda < class2.sugawara){
+                document.write(`<p>sugawaraの方が大きいです</p>`); 
+            }else{
+                document.write(`<p>同じです</p>`); 
+            }
+        }
+
+        function getAverage(anyClass){
+            let ave = 0;
+            for (var k in anyClass) {
+                ave += anyClass[k];
+            }
+            return ave/Object.keys(anyClass).length;
+        }
+    </script> 
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>work17</title>
+</head>
+<body>
+    <script>
+        let Birthday = new Date("1989/5/10");
+        document.write(`<p>${Math.floor(Date.parse(Birthday)/ 86400000)}日</p>`);
+        document.write(`<p>${Math.floor(Date.now()/ 86400000)}日</p>`);
+        document.write(`<p>${(Math.floor(Date.now()/ 86400000) - Math.floor(Date.parse(Birthday)/ 86400000))}日</p>`);
+        
+    </script> 
+</body>
+</html>
