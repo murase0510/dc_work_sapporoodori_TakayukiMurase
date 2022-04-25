@@ -1,0 +1,77 @@
+.container{
+    position: absolute; 
+    text-align: center;
+    width: 80%;
+    height:80%;
+    top:  0;                     
+    bottom:  0;                  
+    left:  0;                    
+    right:  0;                  
+    margin:  auto;    
+    border-radius: 10px;
+}
+
+.timer{
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size:500%;
+}
+
+.timer div{
+    display:inline-block;
+}
+
+.keyboard{
+    width:100%;
+    border-radius: 10px;
+    bottom: 0;
+    margin: 0 ;
+    justify-content: center;
+
+}
+
+.hannon{
+    width:100%;
+    position: absolute;
+}
+
+.hannon_key{
+    width:8%;
+    position: absolute;
+}
+
+.C_shape{
+    position: absolute;
+    left:  12%;                     
+}
+
+.D_shape{
+    left:  168px;  
+}
+
+.F_shape{
+    left:  350px; 
+}
+
+.G_shape{
+    left:  443px; 
+}
+
+.A_shape{
+    left:  535px; 
+}
+
+.key{
+    width: 13%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    color:black;
+    font-size: 200%;
+    background-color: white;
+}
+
+.b_color{
+    background-color: greenyellow;
+}
