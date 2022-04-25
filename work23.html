@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>課題</title>
+</head>
+<body>
+    <div id="textbox">
+        <p id="element_1">要素1</p>
+    </div>
+    <script> 
+        const element_1_text = document.getElementById('element_1');
+        const textbox_text = document.getElementById('textbox');
+        let new_element1 = document.createElement('p');
+        new_element1.textContent = '追加テキスト';
+        new_element1.style.color = "#ff0000";
+        new_element1.style.fontSize = 30+"px"
+        textbox_text.appendChild(new_element1);
+        element_1_text.textContent = '変更後テキスト';	//テキスト変更
+        textbox_text.style.backgroundColor = "#ffff00";
+
+    </script>
+</body>
+<!--以下のプログラムでDOMを用いてHTMLとCSSを操作し、以下に示す画像と同じ内容を表示するように処理を追加してください。具体的な処理は下記になります。
+「要素1」のテキストを「変更後テキスト」に変更
+id=”textbox”の背景色を#ffff00に変更
+「要素1」の直後に「追加テキスト」を挿入。文字色は#ff0000、文字サイズは30px-->
+</html>

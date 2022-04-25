@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>work26</title>
+    <link rel="stylesheet" href="./work26.css">
+</head>
+<body class = "b_color">
+    <div class = "container">
+        <div class = "timer">
+            <div class = "min_timer" id = "min">00</div>:<div class = "sec_timer" id = "sec">00</div>:<div class = "milli_timer">00</div>
+        </div>
+        <div class = "buttons">
+            <input type="button" id="start" value="start" class = "button"></input>
+            <input type="button" id="stop" value="stop" class = "button" disabled></input>
+            <input type="button" id="stop" value="reset"  class = "button" disabled></input>
+        </div>
+    </div>
+    <script>
+        const count_up_sec = document.getElementById("sec");
+        const count_up_min = document.getElementById("min");
+
+        const start = document.getElementById("start");
+        const stop = document.getElementById("stop");
+
+        let min = 0;
+        let sec = 0;
+        let milli = 0;
+
+        const zero = "0";
+
+        start.style.opacity = 1;
+
+        function start_clicked(){
+            start.disabled = true;
+            start.style.opacity = 0.5;
+            stop.disabled = false;
+            stop.style.opacity = 1;
+            timer = setInterval("countup_sec()",1000); 
+        }
+
+        function stop_clicked(){
+            start.disabled = false;
+            start.style.opacity = 1;
+            stop.disabled = true;
+            stop.style.opacity = 0.5;
+        }
+
+        function countup_sec(){
+            sec = Number([count_up_sec.textContent]);
+            sec++;
+            if(10 > sec){
+                count_up_sec.textContent = zero + sec;
+            }else if(sec == 60){
+                countup_min()
+                count_up_sec.textContent = "00";
+                sec = 0;
+            }else{
+                count_up_sec.textContent = sec;
+            }
+        }
+
+        function countup_min(){
+            min = count_up_min.textContent;
+            if(10 > min){
+                count_up_min.textContent = zero + min;
+            }else{
+                count_up_min.textContent = min;
+            }
+        }
+
+        start.addEventListener("click", start_clicked);
+        stop.addEventListener("click", stop_clicked);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>work19</title>
+</head>
+<body>
+    <script>
+        function concatTest(str){
+            return str = str.concat("aaaa");
+        }
+
+        function charAtTest(str){
+            return str.charAt(1);
+        }
+
+        function lastindexTest(str){
+            return str.lastIndexOf("a");
+        }
+
+        function repeatTest(str){
+            return str.repeat(3);
+        }
+
+        function replaceTest(str){
+            return str.replace("a","v")
+        }
+
+        let str = "java"
+
+        document.write(`<p>concat：${concatTest(str)}</p>`);
+        document.write(`<p>charAt：${charAtTest(str)}</p>`);
+        document.write(`<p>lastIndex：${lastindexTest(str)}</p>`);  
+        document.write(`<p>repeat：${repeatTest(str)}</p>`);
+        document.write(`<p>replace：${replaceTest(str)}</p>`);      
+    </script> 
+</body>
+</html>

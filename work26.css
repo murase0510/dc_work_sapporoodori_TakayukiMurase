@@ -1,0 +1,47 @@
+.container{
+    position: absolute; 
+    text-align: center;
+    width: 80%;
+    height:80%;
+    top:  0;                     
+    bottom:  0;                  
+    left:  0;                    
+    right:  0;                  
+    margin:  auto;    
+    border-radius: 10px;
+}
+
+.timer{
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size:1300%;
+}
+
+.timer div{
+    display:inline-block;
+}
+
+.buttons{
+    display: flex;
+    width:100%;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
+.button{
+    width: 33.5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    color:white;
+    font-size: 500%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.b_color{
+    background-color: greenyellow;
+}
