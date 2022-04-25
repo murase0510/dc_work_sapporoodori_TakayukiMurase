@@ -8,44 +8,73 @@
 <body class = "b_color">
     <div class = "container">
         <div class = "timer">
-            <div class = "min_timer" id = "min">00</div>:<div class = "sec_timer" id = "sec">00</div>:<div class = "milli_timer">00</div>
+            <div class = "min_timer" id = "min">00</div>:<div class = "sec_timer" id = "sec">00</div>:<div class = "milli_timer" id = milli>00</div>
         </div>
         <div class = "buttons">
             <input type="button" id="start" value="start" class = "button"></input>
             <input type="button" id="stop" value="stop" class = "button" disabled></input>
-            <input type="button" id="stop" value="reset"  class = "button" disabled></input>
+            <input type="button" id="reset" value="reset"  class = "button" disabled></input>
         </div>
     </div>
     <script>
+        const count_up_milli = document.getElementById("milli");
         const count_up_sec = document.getElementById("sec");
         const count_up_min = document.getElementById("min");
 
         const start = document.getElementById("start");
         const stop = document.getElementById("stop");
+        const reset = document.getElementById("reset");
+
+        const zero = "0";
+        const zero2 = "00";
 
         let min = 0;
         let sec = 0;
         let milli = 0;
 
-        const zero = "0";
-
         start.style.opacity = 1;
 
         function start_clicked(){
             start.disabled = true;
+            reset.disabled = true;
             start.style.opacity = 0.5;
+            reset.style.opacity = 0.5;
             stop.disabled = false;
             stop.style.opacity = 1;
-            timer = setInterval("countup_sec()",1000); 
+            milli_timer = setInterval("countup_milli()",10);  
         }
 
         function stop_clicked(){
             start.disabled = false;
+            reset.disabled = false;
             start.style.opacity = 1;
+            reset.style.opacity = 1;
             stop.disabled = true;
             stop.style.opacity = 0.5;
+            clearInterval(milli_timer); 
         }
 
+        function reset_clicked(){
+            count_up_milli.textContent = zero2;
+            count_up_sec.textContent = zero2;
+            count_up_min.textContent = zero2;
+            reset.disabled = true;
+            reset.style.opacity = 0.5;
+        }
+
+        function countup_milli(){
+            milli = Number([count_up_milli.textContent]);
+            milli++;
+            if(10 > milli){
+                count_up_milli.textContent = zero + milli;
+            }else if(milli == 100){
+                countup_sec();
+                count_up_milli.textContent = zero2;
+                milli = 0;
+            }else{
+                count_up_milli.textContent = milli;
+            }
+        }
         function countup_sec(){
             sec = Number([count_up_sec.textContent]);
             sec++;
@@ -53,7 +82,7 @@
                 count_up_sec.textContent = zero + sec;
             }else if(sec == 60){
                 countup_min()
-                count_up_sec.textContent = "00";
+                count_up_sec.textContent = zero2;
                 sec = 0;
             }else{
                 count_up_sec.textContent = sec;
@@ -61,7 +90,7 @@
         }
 
         function countup_min(){
-            min = count_up_min.textContent;
+            min += 1;
             if(10 > min){
                 count_up_min.textContent = zero + min;
             }else{
@@ -71,6 +100,7 @@
 
         start.addEventListener("click", start_clicked);
         stop.addEventListener("click", stop_clicked);
+        reset.addEventListener("click",reset_clicked)
     </script>
 </body>
 </html>
