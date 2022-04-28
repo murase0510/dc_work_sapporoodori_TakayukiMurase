@@ -4,30 +4,50 @@
     <meta charset="UTF-8">
     <title>js_sapporoodori_murase</title>
     <link rel="stylesheet" href="./js_sapporoodori_murase.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class = "b_color">
     <div class = "container">
-        <div class = "timer">emp</div>
+        <div class = "Ringing" id = "Ringing">emp</div>
         <div class = "keyboard">
             <div class ="hannon">
-                <input type="button" id="C_shape" value="ド＃" class = "hannon_key C_shape"></input>
-                <input type="button" id="D_shape" value="レ＃" class = "hannon_key D_shape"></input>
-                <input type="button" id="F_shape" value="ファ#" class = "hannon_key F_shape"></input>
-                <input type="button" id="G_shape" value="ソ＃" class = "hannon_key G_shape"></input>
-                <input type="button" id="A_shape" value="ラ＃" class = "hannon_key A_shape"></input>
+                <div class = "C_shape hannonkey">ド#</div>
+                <div class = "D_shape hannonkey">レ＃</div>
+                <div class = "F_shape hannonkey">ファ#</div>
+                <div class = "G_shape hannonkey">ソ＃</div>
+                <div class = "A_shape hannonkey">ラ＃</div>
             </div>
             <div class ="zennon">
-                <input type="button" id="c" value="ド" class = "key"></input>
-                <input type="button" id="D" value="レ" class = "key"></input>
-                <input type="button" id="E" value="ミ" class = "key"></input>
-                <input type="button" id="F" value="ファ" class = "key"></input>
-                <input type="button" id="G" value="ソ" class = "key"></input>
-                <input type="button" id="A" value="ラ" class = "key"></input>
-                <input type="button" id="B" value="シ" class = "key"></input>
+                <div class = "key">ド</div>
+                <div class = "key">レ</div>
+                <div class = "key">ミ</div>
+                <div class = "key">ファ</div>
+                <div class = "key">ソ</div>
+                <div class = "key">ラ</div>
+                <div class = "key">シ</div>
             </div>
         </div>
     </div>
     <script>
+        const emp = "emp";
+        const kirakiraboshi_title = "きらきら星";
+        const tulip_title = "チューリップ";
+        const kirakiraboshi_score = ["ド","ド","ソ","ソ","ラ","ラ","ソ","ファ","ファ","ミ","ミ","レ","レ","ド","ソ","ソ","ファ","ファ","ミ","ミ","レ","ソ","ソ","ファ","ファ","ミ","ミ","レ","ド","ド","ソ","ソ","ラ","ラ","ソ","ファ","ファ","ミ","ミ","レ","レ","ド"];
+        const tulip_score = ["ド","レ","ミ","ド","レ","ミ","ソ","ミ","レ","ド","レ","ミ","レ","ド","レ","ミ","ド","レ","ミ","ソ","ミ","レ","ド","レ","ミ","ド","ソ","ソ","ミ","ソ","ラ","ラ","ソ","ミ","ミ","レ","レ","ド",];
+        var timer;
+
+        $("[class$='key']").click(function(){
+            $('#Ringing').text($(this).text());
+            clearTimeout(timer);
+            timer = setTimeout(() => {$('#Ringing').text(emp)}, 1000);
+        });
+        
+        class Sounding{
+            constructor(sound,milli){
+                this.sound = sound;
+                this.milli = milli;
+            }
+        }
     </script>
 </body>
 </html>

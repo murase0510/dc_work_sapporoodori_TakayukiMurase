@@ -11,14 +11,14 @@
     border-radius: 10px;
 }
 
-.timer{
+.Ringing{
     border-radius: 10px;
     background-color: black;
     color: white;
     font-size:500%;
 }
 
-.timer div{
+.Ringing div{
     display:inline-block;
 }
 
@@ -36,9 +36,12 @@
     position: absolute;
 }
 
-.hannon_key{
+.hannonkey{
     width:8%;
     position: absolute;
+    display:inline-block;
+    color:white;
+    background-color: black;
 }
 
 .C_shape{
@@ -70,6 +73,7 @@
     color:black;
     font-size: 200%;
     background-color: white;
+    display: inline-block;
 }
 
 .b_color{
